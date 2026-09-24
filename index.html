@@ -10,67 +10,65 @@
 
 <style>
 :root {
-    /* Fundo e superfícies */
-    --bg-body: #f7f7f6;
-    --bg-gradient: linear-gradient(160deg, #fafaf9 0%, #efeeec 100%);
+    /* Fundo e superfícies — Viana */
+    --bg-body: #f4f8fb;
+    --bg-gradient: linear-gradient(180deg, #ffffff 0%, #eef4f8 100%);
     --surface: #ffffff;
-    --surface-muted: #fafaf9;
-    --surface-sunken: #f5f5f4;
+    --surface-muted: #f7fafc;
+    --surface-sunken: #eef4f8;
 
     /* Texto */
-    --text-main: #1c1917;
-    --text-muted: #57534e;
-    --text-subtle: #8a8580;
+    --text-main: #0f2438;
+    --text-muted: #4a5b6e;
+    --text-subtle: #7a8a9b;
 
     /* Bordas */
-    --border-color: #e7e5e4;
-    --border-strong: #d6d3d1;
+    --border-color: #dbe5ec;
+    --border-strong: #b8c8d4;
 
-    /* Cor primária — neutra escura */
-    --primary: #292524;
-    --primary-hover: #1c1917;
-    --primary-light: #f5f5f4;
-    --primary-ring: rgba(41, 37, 36, 0.12);
+    /* Primária — Navy Viana */
+    --primary: #1a3a5f;
+    --primary-hover: #14304f;
+    --primary-light: #eaf1f6;
+    --primary-ring: rgba(26, 58, 95, 0.18);
 
-    /* ============================================================
-       STATUS — cores bem separadas entre si
-    ============================================================ */
+    /* Destaque — Teal Viana */
+    --accent: #7ec8d3;
+    --accent-hover: #5fb5c3;
+    --accent-light: #e8f5f8;
+    --accent-text: #2a6b76;
 
-    /* 🔴 Vermelho — vencido */
+    /* STATUS — mantidos intactos */
     --danger-bg:     #fef2f2;
     --danger-border: #fca5a5;
     --danger-text:   #b91c1c;
     --danger-accent: #dc2626;
 
-    /* 🟠 Laranja profundo — vence hoje */
     --warning-bg:     #fff7ed;
     --warning-border: #fdba74;
     --warning-text:   #c2410c;
-    --warning-accent: #ea580c;   /* laranja mais "vermelhado" */
+    --warning-accent: #ea580c;
 
-    /* 🟡 Amarelo vivo — próximos 7 dias */
     --near-bg:     #fefce8;
     --near-border: #ffe359;
-    --near-text:   #6b3e0b;      /* mais escuro para contraste */
-    --near-accent: #ffcc00;      /* amarelo puro, não confunde com laranja */
+    --near-text:   #6b3e0b;
+    --near-accent: #ffcc00;
 
-    /* 🟢 Verde — a vencer */
     --success-bg:     #f0fdf4;
     --success-border: #86efac;
     --success-text:   #15803d;
     --success-accent: #22c55e;
 
-    /* Neutro — desconhecido */
     --neutral-bg:     #f5f5f4;
     --neutral-border: #d6d3d1;
     --neutral-text:   #57534e;
     --neutral-accent: #94a3b8;
 
     /* Elevação */
-    --shadow-sm: 0 1px 2px rgba(28, 25, 23, 0.04), 0 1px 3px rgba(28, 25, 23, 0.03);
-    --shadow-md: 0 4px 10px rgba(28, 25, 23, 0.05), 0 2px 4px rgba(28, 25, 23, 0.03);
-    --shadow-lg: 0 12px 24px rgba(28, 25, 23, 0.07), 0 4px 8px rgba(28, 25, 23, 0.04);
-    --shadow-xl: 0 24px 48px rgba(28, 25, 23, 0.15);
+    --shadow-sm: 0 1px 2px rgba(15, 36, 56, 0.04), 0 1px 3px rgba(15, 36, 56, 0.03);
+    --shadow-md: 0 4px 10px rgba(15, 36, 56, 0.06), 0 2px 4px rgba(15, 36, 56, 0.03);
+    --shadow-lg: 0 12px 24px rgba(15, 36, 56, 0.08), 0 4px 8px rgba(15, 36, 56, 0.04);
+    --shadow-xl: 0 24px 48px rgba(15, 36, 56, 0.18);
 
     --radius-sm: 8px;
     --radius-md: 12px;
@@ -83,12 +81,30 @@
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, 'Inter', sans-serif;
     background: var(--bg-gradient);
+    background-attachment: fixed;
     color: var(--text-main);
     padding: 32px 24px;
     min-height: 100vh;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
+    position: relative;
+}
+
+/* Onda decorativa sutil no topo — eco da onda da logo Viana */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 260px;
+    pointer-events: none;
+    z-index: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 260' preserveAspectRatio='none'%3E%3Cpath d='M0,140 C240,80 480,180 720,120 C960,60 1200,160 1440,100 L1440,0 L0,0 Z' fill='%237ec8d3' fill-opacity='0.10'/%3E%3Cpath d='M0,190 C240,130 480,230 720,170 C960,110 1200,210 1440,150 L1440,0 L0,0 Z' fill='%231a3a5f' fill-opacity='0.05'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% 260px;
 }
 
 ::-webkit-scrollbar { width: 8px; height: 8px; }
@@ -104,7 +120,12 @@ body {
 
 .hidden { display: none !important; }
 
-.app-container { max-width: 1440px; margin: 0 auto; }
+.app-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
 
 /* ============================================================
    HEADER
@@ -121,27 +142,91 @@ body {
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
 }
 
-.app-header h1 {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--text-main);
-    letter-spacing: -0.02em;
+/* Faixa navy + teal no topo do header */
+.app-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary) 55%, var(--accent) 100%);
+}
+
+/* Brand (logo + texto) */
+.brand {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
 }
 
-.app-header h1 small {
-    font-size: 12px;
+.brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f0f6fa 0%, #e2edf3 100%);
+    border: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.brand-mark svg {
+    width: 36px;
+    height: 36px;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.brand-name {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: 0.14em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.brand-sub {
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--accent-text);
+    letter-spacing: 0.32em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.brand-divider {
+    width: 1px;
+    height: 36px;
+    background: var(--border-color);
+    margin: 0 4px;
+}
+
+.header-title h1 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-main);
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+}
+
+.header-title h1 small {
+    display: block;
+    font-size: 11px;
     font-weight: 500;
     color: var(--text-muted);
-    background: var(--surface-sunken);
-    padding: 4px 12px;
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
     letter-spacing: 0;
+    margin-top: 2px;
 }
 
 .header-actions { display: flex; align-items: center; gap: 10px; }
@@ -209,8 +294,8 @@ body {
 
 .upload-zone:hover,
 .upload-zone.dragover {
-    border-color: var(--primary);
-    background: var(--primary-light);
+    border-color: var(--accent);
+    background: var(--accent-light);
     box-shadow: var(--shadow-md);
 }
 
@@ -278,6 +363,7 @@ body {
     margin-bottom: 20px;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
+    border-top: 2px solid var(--accent);
     animation: fadeUp 0.5s ease both;
 }
 
@@ -409,7 +495,6 @@ body {
     width: fit-content;
 }
 
-/* Barras laterais coloridas nos cards de status */
 .card-stat.card-overdue { border-left: 4px solid var(--danger-accent); }
 .card-stat.card-today   { border-left: 4px solid var(--warning-accent); }
 .card-stat.card-near    { border-left: 4px solid var(--near-accent); }
@@ -477,9 +562,9 @@ body {
     border-left-color: var(--near-accent);
 }
 .attention-card.blue {
-    background: var(--neutral-bg);
-    border-color: var(--neutral-border);
-    border-left-color: var(--neutral-accent);
+    background: var(--accent-light);
+    border-color: var(--accent);
+    border-left-color: var(--primary);
 }
 
 .attention-card .attention-icon { font-size: 18px; margin-bottom: 6px; }
@@ -567,8 +652,8 @@ body {
     font-family: inherit;
 }
 .chart-toggle button.active {
-    background: var(--surface);
-    color: var(--text-main);
+    background: var(--primary);
+    color: #fff;
     box-shadow: var(--shadow-sm);
 }
 
@@ -659,9 +744,8 @@ table td {
     color: var(--text-main);
 }
 table tbody tr { transition: background-color 0.15s; }
-table tbody tr:hover { background: var(--surface-sunken); }
+table tbody tr:hover { background: var(--accent-light); }
 
-/* Linhas com accent colorido à esquerda */
 table tbody tr.row-overdue {
     background: var(--danger-bg);
     box-shadow: inset 4px 0 0 var(--danger-accent);
@@ -746,7 +830,7 @@ table tbody tr.row-avencer:hover { background: #dcfce7; }
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(28, 25, 23, 0.45);
+    background: rgba(15, 36, 56, 0.45);
     z-index: 1000;
     align-items: center;
     justify-content: center;
@@ -876,7 +960,7 @@ table tbody tr.row-avencer:hover { background: #dcfce7; }
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(28, 25, 23, 0.45);
+    background: rgba(15, 36, 56, 0.45);
     z-index: 1500;
     align-items: center;
     justify-content: center;
@@ -919,7 +1003,7 @@ table tbody tr.row-avencer:hover { background: #dcfce7; }
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(247, 247, 246, 0.75);
+    background: rgba(244, 248, 251, 0.75);
     backdrop-filter: blur(4px);
     z-index: 1800;
     align-items: center;
@@ -974,7 +1058,11 @@ table tbody tr.row-avencer:hover { background: #dcfce7; }
 @media (max-width: 768px) {
     body { padding: 16px 12px; }
     .app-header { padding: 16px; }
-    .app-header h1 { font-size: 17px; flex-wrap: wrap; }
+    .brand-mark { width: 44px; height: 44px; }
+    .brand-mark svg { width: 30px; height: 30px; }
+    .brand-name { font-size: 15px; }
+    .brand-sub { font-size: 9px; }
+    .header-title { display: none; }
     .filter-bar { grid-template-columns: 1fr; }
     .cards-grid { grid-template-columns: repeat(2, 1fr); }
     .charts-grid { grid-template-columns: 1fr; }
@@ -992,10 +1080,26 @@ table tbody tr.row-avencer:hover { background: #dcfce7; }
 <div class="app-container">
 
     <header class="app-header">
-        <h1>
-            Análise Financeira
-            <small>Dashboard de Títulos — Protheus</small>
-        </h1>
+        <div class="brand">
+            <div class="brand-mark" aria-hidden="true">
+                <!-- Marca Viana: V navy + onda teal -->
+                <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 6 L22 40 L42 6 L33 6 L22 26 L11 6 Z" fill="#1a3a5f"/>
+                    <path d="M10 10 Q15 5 22 9 Q29 13 34 10 L22 26 Z" fill="#7ec8d3"/>
+                </svg>
+            </div>
+            <div class="brand-text">
+                <div class="brand-name">Viana</div>
+                <div class="brand-sub">Offshore</div>
+            </div>
+            <div class="brand-divider"></div>
+            <div class="header-title">
+                <h1>
+                    Análise Financeira
+                    <small>Dashboard de Títulos — Protheus</small>
+                </h1>
+            </div>
+        </div>
 
         <div class="header-actions">
             <button class="btn btn-outline btn-sm hidden" id="btnChangeFile">
@@ -1359,7 +1463,7 @@ table tbody tr.row-avencer:hover { background: #dcfce7; }
     };
 
     const CHART_BAR_COLORS = {
-        empresas:        '#292524',
+        empresas:        '#1a3a5f',
         faixaVencimento: '#b91c1c',
         evolucao:        '#0f766e',
         vencidos:        '#b91c1c',
@@ -2637,7 +2741,6 @@ table tbody tr.row-avencer:hover { background: #dcfce7; }
                     cellHtml = escapeHtml(formatCurrency(val));
                 } else if (col === '_classificacao') {
                     const c = d._classificacao;
-                    // c.css e c.label vêm de classifyTitle — não contêm dados do usuário
                     cellHtml = `<span class="status-tag ${c ? c.css : ''}">${c ? c.label : 'Desconhecido'}</span>`;
                 } else if (val === undefined || val === null) {
                     cellHtml = '';
@@ -2661,7 +2764,6 @@ table tbody tr.row-avencer:hover { background: #dcfce7; }
         pagePrev.disabled = state.currentPage <= 1;
         pageNext.disabled = state.currentPage >= totalPages;
 
-        // Paginação
         let pagesHTML = '';
         const maxShow = 5;
         let startPage = Math.max(1, state.currentPage - Math.floor(maxShow / 2));
@@ -2713,7 +2815,6 @@ table tbody tr.row-avencer:hover { background: #dcfce7; }
         $('detCount').textContent = data.length;
         $('detPctOverdue').textContent = pctOverdue.toFixed(1) + '%';
 
-        // Situação
         const sitMap = {};
         data.forEach(d => {
             const key = d._classificacao ? d._classificacao.key : 'desconhecido';
@@ -2734,7 +2835,6 @@ table tbody tr.row-avencer:hover { background: #dcfce7; }
         if (detChartSituacao) detChartSituacao.destroy();
         detChartSituacao = renderChart('detChartSituacao', 'doughnut', labels, values, colors);
 
-        // Evolução
         const monthMap = {};
         data.forEach(d => {
             if (!d._dueDate || !isDate(d._dueDate)) return;
@@ -2752,7 +2852,6 @@ table tbody tr.row-avencer:hover { background: #dcfce7; }
         if (detChartEvolucao) detChartEvolucao.destroy();
         detChartEvolucao = renderChart('detChartEvolucao', 'line', labelsMonth, valuesMonth, [CHART_BAR_COLORS.evolucao], true);
 
-        // Tabela detalhe
         const detailBase = FIELD_ORDER.filter(c => state.columns.includes(c));
         const detailExtra = state.columns.filter(c => !FIELD_ORDER.includes(c) && c !== '_classificacao');
         const cols = [...detailBase, '_classificacao', ...detailExtra];
@@ -3111,7 +3210,7 @@ table tbody tr.row-avencer:hover { background: #dcfce7; }
 
     console.log('📊 Dashboard Financeiro carregado.');
     console.log('📅 Regra de vencimento: VENCTO REAL.');
-    console.log('🎨 Paleta neutra + status bem separados (vermelho/laranja/amarelo/verde).');
+    console.log('🎨 Paleta Viana Offshore: navy #1a3a5f + teal #7ec8d3.');
 })();
 </script>
 
